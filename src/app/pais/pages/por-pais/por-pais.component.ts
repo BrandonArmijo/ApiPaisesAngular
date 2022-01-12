@@ -15,12 +15,14 @@ export class PorPaisComponent {
   constructor(private paisService: PaisService) {
   }
 
-  buscar() {
+  buscar(termino: string) {
+
     this.hayError = false;
+    this.termino = termino;
     // eslint-disable-next-line no-console
     console.log(this.termino);
 
-    this.paisService.buscarPais(this.termino)
+    this.paisService.buscarPais(termino)
       .subscribe((paises) => {
         // eslint-disable-next-line no-console
         console.log(paises);
@@ -30,6 +32,9 @@ export class PorPaisComponent {
         this.paises = [];
       });
 
+  }
+  sugerencias(termino: string){
+    this.hayError = false;
   }
 
 }
