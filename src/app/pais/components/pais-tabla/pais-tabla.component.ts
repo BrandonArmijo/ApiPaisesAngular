@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Country} from "../../interfaces/pais.interface";
+import {CountryDOS} from "../../interfaces/pais.interface";
 
 @Component({
   selector: 'app-pais-tabla',
@@ -7,10 +7,14 @@ import {Country} from "../../interfaces/pais.interface";
 })
 export class PaisTablaComponent implements OnInit {
 
-  @Input() paises: Country[] = [];
+  @Input() paises: CountryDOS[] = [];
   constructor() { }
+
+
 
   ngOnInit(): void {
   }
+
+
 
 }

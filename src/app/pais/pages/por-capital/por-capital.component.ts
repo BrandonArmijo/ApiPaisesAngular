@@ -1,6 +1,6 @@
 import { Component} from '@angular/core';
-import {Country} from "../../interfaces/pais.interface";
 import {PaisService} from "../../services/pais.service";
+import {CountryDOS} from "../../interfaces/pais.interface";
 
 @Component({
   selector: 'app-por-capital',
@@ -12,7 +12,7 @@ export class PorCapitalComponent {
 
   termino: string = '';
   hayError: boolean = false;
-  capitales: Country[] = [];
+  paises: CountryDOS[] = [];
 
   constructor(private paisService: PaisService) {
   }
@@ -24,13 +24,13 @@ export class PorCapitalComponent {
     console.log(this.termino);
 
     this.paisService.buscarCapital(termino)
-      .subscribe((capitales) => {
+      .subscribe((paises) => {
         // eslint-disable-next-line no-console
-        console.log(capitales);
-        this.capitales = capitales;
+        console.log(paises);
+        this.paises = paises;
       }, (err) => {
         this.hayError = true;
-        this.capitales = [];
+        this.paises = [];
       });
 
   }

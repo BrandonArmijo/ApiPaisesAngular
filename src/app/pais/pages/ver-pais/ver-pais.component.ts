@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {PaisService} from "../../services/pais.service";
 import {switchMap, tap} from 'rxjs/operators'
-import {CountryDOS} from "../../interfaces/paisDos.interface";
+import {CountryDOS} from "../../interfaces/pais.interface";
 
 @Component({
   selector: 'app-ver-pais',
